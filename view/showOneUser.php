@@ -11,7 +11,7 @@
 <body>
     <h1>Ingreso al la vista de un alumno</h1>
     <?php require '../model/handler.php'  ?> 
-    <?php echo $usuario['nombre']  ?> 
+    <?php echo $usuario['nombre'] ?> 
 </body>
 
 </html>
