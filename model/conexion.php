@@ -4,7 +4,7 @@ class Conexion{
     private  $con;
 
     public function __construct(){
-        $this->con = new mysqli('localhost','root','','mvcpoobasic');
+        $this->con = new mysqli('localhost','root','','mvcphpbasic');
     }
     
     public function getUser(){
@@ -21,6 +21,11 @@ class Conexion{
 
         return $retorno;
 
+    }
+
+    public function getUserById($id){
+        $query = $this->con->query("SELECT * FROM usuarios where id = $id");
+        return $query;
     }
 
 }

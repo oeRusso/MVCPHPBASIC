@@ -1,9 +1,9 @@
 <?php
-require 'MVCPHPBASIC/model/conexion.php';
+require '../model/conexion.php';
 
 class UsuarioController{
 
-    private $db;
+    public $db;
     public function __construct()
     {
         $this->db= new Conexion();
@@ -11,5 +11,12 @@ class UsuarioController{
 
     public function getAllUser(){
         $usuarios = $this->db->getUser();
+        return $usuarios;
+    }
+
+    public function getOneUser($id){
+        $user = $this->db->getUserById($id);
+        require '../view/showOneUser.php';
+        return $user;
     }
 }
