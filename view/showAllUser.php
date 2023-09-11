@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <h1>Listado de todos los usuarios</h1>
     <table class="table">
         <thead>
             <tr>
@@ -30,9 +31,9 @@
             ?>
                 <tr>
                     <td> <?php echo $user['nombre']  ?> </td>
-                    <td> <?php echo $user['contraseña']  ?> </td>
                     <td> <?php echo $user['email'] ?> </td>
-                    <td><a href="<?php echo '/MVCPHPBASIC/model/handler.php?action=getOneUser&param='.$user['id']?>"> Edita </a></td>
+                    <td> <?php echo $user['contraseña']  ?> </td>
+                    <td><a href="<?php echo '/MVCPHPBASIC/controller/handler.php?action=updateUserController&param='.$user['id']?>"> Edita </a></td>
                     <td>Eliminar</td>
                 </tr>
 

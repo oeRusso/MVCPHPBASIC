@@ -1,5 +1,5 @@
 <?php
-require '../model/conexion.php';
+require 'C:/xampp/htdocs/MVCPHPBASIC/model/conexion.php';
 
 class UsuarioController{
 
@@ -15,8 +15,13 @@ class UsuarioController{
     }
 
     public function getOneUser($id){
-        $user = $this->db->getUserById($id);
+        $result = $this->db->getUserById($id);
+        $user = mysqli_fetch_assoc($result); // Obtener la fila de resultados
         require '../view/showOneUser.php';
+    }
+
+    public function updateUserController($user){
+        $result = $this->db->updateUser($user);
         return $user;
     }
 }

@@ -1,1 +1,1 @@
-FIXME: Ahora solo tenes que ver como llamar a los datos a la vista esa que estas retornando
+FIXME: Tenes que ver en mysql como hacer el update donde te matchee tus campos de la bd junto con lo que estas enviando del formulario

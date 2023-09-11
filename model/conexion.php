@@ -28,4 +28,10 @@ class Conexion{
         return $query;
     }
 
+    public function updateUser($user){
+        $query = $this->con->query("UPDATE usuarios SET nombre = ?, email = ?, contraseña = ? WHERE id = $user");
+
+        return $query;
+    }
+
 }
