@@ -28,10 +28,31 @@ class Conexion{
         return $query;
     }
 
-    public function updateUser($user){
-        $query = $this->con->query("UPDATE usuarios SET nombre = ?, email = ?, contraseña = ? WHERE id = $user");
-
-        return $query;
+    public function updateUser($userData) {
+        // Asegúrate de que el arreglo tenga las claves necesarias
+        if (isset($userData['id'], $userData['nombre'], $userData['email'], $userData['contraseña'])) {
+            // Utiliza marcadores de posición en la consulta SQL
+            $query = $this->con->prepare("UPDATE usuarios SET nombre = ?, email = ?, contraseña = ? WHERE id = ?");
+            
+            // Extrae los valores del arreglo
+            $userId = $userData['id'];
+            $nombre = $userData['nombre'];
+            $email = $userData['email'];
+            $contraseña = $userData['contraseña'];
+            
+            // Ejecuta la consulta con los valores extraídos del arreglo
+            $query->bind_param("sssi", $nombre, $email, $contraseña, $userId);
+            $query->execute();
+            
+            // Verifica si la actualización fue exitosa
+            if ($query->affected_rows > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false; // Datos insuficientes en el arreglo
+        }
     }
 
 }

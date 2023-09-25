@@ -33,7 +33,7 @@
                     <td> <?php echo $user['nombre']  ?> </td>
                     <td> <?php echo $user['email'] ?> </td>
                     <td> <?php echo $user['contraseña']  ?> </td>
-                    <td><a href="<?php echo '/MVCPHPBASIC/controller/handler.php?action=updateUserController&param='.$user['id']?>"> Edita </a></td>
+                    <td><a href="<?php echo '/MVCPHPBASIC/controller/handler.php?action=updateUserController&param='.$user['id']?>"> Editar </a></td>
                     <td>Eliminar</td>
                 </tr>
 

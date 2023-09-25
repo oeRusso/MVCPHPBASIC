@@ -12,7 +12,8 @@
 <body>
     <h1>Ingreso al la vista de un alumno</h1>
 
-    <form action="<?php echo '/MVCPHPBASIC/controller/handler.php?action=getOneUser&param='.$user['id']?>" method="POST">
+    <form action="<?php echo '/MVCPHPBASIC/controller/handler.php?param='.$user['id']?>" method="POST"> 
+    <!-- //aca antes estaba enviando el metodo y el id pero ahora solo envie el id ya que en el handler defino el metodo y le paso ese id -->
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nombre</label>
             <input name="nombre" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $user['nombre'] ?>">
@@ -23,10 +24,11 @@
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" value="<?php echo $user['contraseña'] ?>">
+            <input name="contraseña" class="form-control" id="exampleInputPassword1" value="<?php echo $user['contraseña'] ?>">
         </div>
        
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+
     </form>
 
   
